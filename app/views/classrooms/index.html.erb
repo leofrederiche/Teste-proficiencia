@@ -1,11 +1,23 @@
 <h1>Salas de aulas</h1>
 
-<%= link_to "Fazer associação", new_classroom_path %>
+<%= link_to "Fazer associação", new_classroom_path, class: "btn btn-red" %>
 
-<% @classrooms.each do |classroom| %>
-	<p>
-		<%= @students.find_by_id(classroom.student_id).name %> estuda
-		<%= @courses.find_by_id(classroom.course_id).name %>
-	</p>
+<div class="container">
+	<table class="row">
+		<tr>
+			<td class="col-sm-6 attr-list">Estudante</td>
+			<td class="col-sm-6 attr-list">Cursando</td>
+		</tr>
 
-<% end %>
+		<% @classrooms.each do |classroom| %>
+			<tr>
+				<td class="col-sm-6">
+					<%= @students.find_by_id(classroom.student_id).name %>
+				</td>
+				<td class="col-sm-6">
+					<%= @courses.find_by_id(classroom.course_id).name %>
+				</td>
+			</tr>
+		<% end %>
+	</table>
+</div>

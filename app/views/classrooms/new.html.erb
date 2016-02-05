@@ -1,9 +1,13 @@
 <h1>Nova associação</h1>
 
 <%= simple_form_for @new_class do |classroom| %>
-	<%= classroom.input :entry_at, label: "Data de entrada" %>
-	<%= classroom.input :student_id, label: "ID do estudante", collection: @students %>
-	<%= classroom.input :course_id, label: "ID do curso", collection: @courses %>
+	<br>
+	<%= classroom.input :entry_at, label: "Data de entrada (data/hora)", required: false %>
+	<br>
+	<%= classroom.input :student_id, label: "ID do estudante", collection: @students, required: false %>
+	<br>
+	<%= classroom.input :course_id, label: "ID do curso", collection: @courses, required: false %>
+	<br>
 
-	<%= classroom.submit "Associar" %>
+	<%= classroom.submit "Associar", class: "btn btn-green" %>
 <% end %>

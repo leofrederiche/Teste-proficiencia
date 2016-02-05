@@ -1,7 +1,11 @@
 <h1>Cursos</h1>
 
-<%= link_to "Adicionar curso", new_course_path %>
-
-<% @courses.each do |course| %>
-	<p><%= link_to course.name, course_path(course.id) %></p>
-<% end %>
+<%= link_to "Adicionar curso", new_course_path, class: "btn btn-red" %>
+<div class="container">
+	<ul>
+		<li class="attr-list">Nome dos cursos</li>
+		<% @courses.each do |course| %>
+			<li><%= link_to course.name, course_path(course.id) %></li>
+		<% end %>
+	<ul>
+</div>

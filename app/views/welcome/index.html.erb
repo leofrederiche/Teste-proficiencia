@@ -1,4 +1,8 @@
-<h1>Associação de Cursos e Estudantes</h1>
+<h1 class="title">Associação de Cursos e Estudantes</h1>
 
-<%= link_to "Cadastrar estudante", new_student_path %>
-<%= link_to "Adicionar curso", new_course_path %>
+<%= image_tag "graduation-cap2.png", class: "cap-home" %>
+
+<div class="group-buttons">
+	<%= link_to "Cadastrar estudante", new_student_path, class: "btn btn-orange" %>
+	<%= link_to "Adicionar curso", new_course_path, class: "btn btn-orange" %>
+</div>
