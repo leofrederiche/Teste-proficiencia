@@ -10,11 +10,23 @@ class StudentsController < ApplicationController
 
 	def create
 		@new_student = Student.create(student_params)
+		@new_student.status = 0;
 		if @new_student.save
-			redirect_to root_path
+			redirect_to student_path(@new_student.id)
 		else
 			render :new
 		end
+	end
+
+	def show
+		@student = Student.find params[:id]
+	end
+
+	def destroy
+		@student = Student.find params[:id]
+		@student.delete
+
+		redirect_to students_path
 	end
 
 	private
