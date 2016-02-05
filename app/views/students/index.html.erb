@@ -1,7 +1,6 @@
-<%= link_to "Cadastrar estudante", new_student_path %>
-
 <h1>Estudantes:</h1>
 
+<%= link_to "Cadastrar estudante", new_student_path %>
 <% @students.each do |student| %>
 	<p><%= link_to student.name, student_path(student.id) %></p>
 <% end %>

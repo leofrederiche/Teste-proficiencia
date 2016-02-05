@@ -1,12 +1,8 @@
 <h1>Cadastrar estudante</h1>
 
-<% if @new_student.errors.any? %>
-  
-<% end %>
-
 <%= simple_form_for @new_student do |new_student| %>
 	<%= new_student.input :name, label: "Nome" %>
-	<%= new_student.input :register_number, label: "Número de Registro" ,hint: 'Apenas números' %>
+	<%= new_student.input :register_number, label: "Número de Ristro" ,hint: 'Apenas números' %>
 	<br>
 	<%= new_student.submit "Cadastrar estudante" %>
 <% end %>

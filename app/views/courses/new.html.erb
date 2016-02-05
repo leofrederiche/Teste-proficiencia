@@ -1,0 +1,9 @@
+<h1>Adicionar Curso</h1>
+
+<%= simple_form_for @new_course do |new_course| %>
+	<%= new_course.input :name, label: "Nome" %>
+	<%= new_course.input :description, label: "Descrição" %>
+	<br>
+	<%= new_course.submit "Cadastrar curso" %>
+
+<% end %>
